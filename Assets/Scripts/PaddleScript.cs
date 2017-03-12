@@ -13,11 +13,12 @@ public class PaddleScript : MonoBehaviour
 	void Update () 
 	{
 	
-		//local variable. vector 3 (a struct of 3 no.) (f required as a float)
-		// this.transform.po... kees the original pos of y.
+		//create a local variable. vector 3 (a struct of 3 no.) (f required as a float)
+		// this.transform.position.y  keeps the original pos of y.
 		Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
 		print ("Hello, Ball.");
-		float mousePosInBlocks = Input.mousePosition.x / Screen.width * 9;
+		
+		float mousePosInBlocks = Input.mousePosition.x / Screen.width * 8;
 		// paddlePos.x = mousePosInBlocks; becomes
 		paddlePos.x = Mathf.Clamp(mousePosInBlocks, 0.65f, 7.35f);
 		
