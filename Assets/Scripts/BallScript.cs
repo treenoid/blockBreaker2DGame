@@ -4,7 +4,7 @@ using System.Collections;
 public class BallScript : MonoBehaviour
 {
 	
-	public PaddleScript paddle;
+	private PaddleScript paddle;
 	private bool hasGameStarted = false;
 	
 	// this. because we are in the context of Ball. Ball.cs == this.
@@ -15,6 +15,7 @@ public class BallScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		paddle = GameObject.FindObjectOfType<PaddleScript>();
 		paddleToBallVector = this.transform.position - paddle.transform.position;
 	}
 	
